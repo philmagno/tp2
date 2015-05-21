@@ -11,15 +11,16 @@ public class Vertice {
 	public Vertice(No valor){
 		this.valor = valor;
 	}
-	
-	public void adicionarAresta(No vertice1, No vertice2){
-		arestas.add(new Aresta(vertice1, vertice2));
-	}
 
 	public void adicionarAresta(No vertice) {
 		arestas.add(new Aresta(this.valor, vertice));
 	}
 
+	@Deprecated
+	public void adicionarAresta(No vertice1, No vertice2){
+		arestas.add(new Aresta(vertice1, vertice2));
+	}
+	
 	@Override
 	public String toString() {
 		return "Vertice [valor=" + valor + ", arestas=" + arestas + "]";

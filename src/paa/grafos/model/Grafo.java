@@ -4,16 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Grafo {
-	private List<Vertice> vertices = new ArrayList<Vertice>();
-	
-	public List<Vertice> getVertices() {
-		return vertices;
-	}
-
-	public void setVertices(List<Vertice> vertices) {
-		this.vertices = vertices;
-	}
-	
+	List<Vertice> vertices = new ArrayList<Vertice>();
+		
 	public void adicionarVertice(Vertice vertice){
 		vertices.add(vertice);
 	}
