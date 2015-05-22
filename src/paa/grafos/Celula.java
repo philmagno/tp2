@@ -1,9 +1,9 @@
-package paa.grafos.model;
+package paa.grafos;
 
-public class No {
-	private int valor;
+public class Celula {
+	public int valor;
 
-	public No(int valor) {
+	public Celula(int valor) {
 		this.valor = valor;
 	}
 

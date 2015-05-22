@@ -5,11 +5,8 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
-import paa.grafos.model.Grafo;
-import paa.grafos.model.No;
-import paa.grafos.model.Vertice;
-
 public class ExtrairGrafos {
+	
 	public Grafo extrairArquivo(String path){
 		try {
 			FileReader reader = new FileReader(new File(path));
@@ -31,14 +28,19 @@ public class ExtrairGrafos {
 
 			if(vertices.length > 0
 					&& !vertices[0].replace(" ","").equals("")){
-				No no = new No(Integer.valueOf(vertices[0]));
-				Vertice vertice = new Vertice(no);
-				System.out.println(no);
-			
+				
+				Celula origem = new Celula(Integer.valueOf(vertices[0]));
+				Vertice vertice = new Vertice(origem);
+				System.out.println(origem);
+				
+				if(grafo.raiz == null)
+					grafo.raiz = vertice; 
+
 				for (int i = 1; i < vertices.length; i++) {
-					vertice.adicionarAresta(new No(Integer.valueOf(vertices[i])));
+					Celula destino = new Celula(Integer.valueOf(vertices[i]));
+					grafo.adicionarAresta(origem, destino);
 				}
-				grafo.adicionarVertice(vertice);
+				
 			}
 			readLine = buffered.readLine();
 		}
